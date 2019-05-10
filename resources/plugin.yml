@@ -1,0 +1,8 @@
+name: HarleyMobs
+author: KickPost
+version: 1.0
+main: br.com.kickpost.harleymobs.HarleyMobs
+commands:
+  ranks:
+  rankup:
+  mgive:

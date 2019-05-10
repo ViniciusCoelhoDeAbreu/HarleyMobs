@@ -1,0 +1,172 @@
+MySQL:
+  user: 'root'
+  pass: ''
+  db: 'kickpost'
+  host: 'localhost'
+
+Ranks:
+  Terra:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 1
+    Evoluir: ''
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&6[Terra] &f'
+    ItemSlot: 12
+    ItemLore: 
+    - ''
+    ItemQuantia: 1
+    Id: '3'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+  Pedra:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 2
+    Evoluir: 'DIRT'
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&7[Pedra] &f'
+    ItemSlot: 13
+    ItemLore: 
+    - ''
+    ItemQuantia: 1
+    Id: '1'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+  Carvao:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 3
+    Evoluir: 'STONE'
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&8[Carvão] &f'
+    ItemSlot: 14
+    ItemLore: 
+    - ''
+    ItemQuantia: 1
+    Id: '16'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+  Ferro:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 4
+    Evoluir: 'COAL_ORE'
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&f[Ferro] &f'
+    ItemSlot: 21
+    ItemLore: 
+    - ''
+    ItemQuantia: 1
+    Id: '15'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+  Ouro:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 5
+    Evoluir: 'IRON_ORE'
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&e[Ouro] &f'
+    ItemSlot: 22
+    ItemLore: 
+    - ''
+    ItemQuantia: 1
+    Id: '14'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+  Lapis:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 6
+    Evoluir: 'GOLD_ORE'
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&9[Lápis] &f'
+    ItemSlot: 23
+    ItemLore: 
+    - ''
+    ItemQuantia: 1
+    Id: '21'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+  Diamante:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 7
+    Evoluir: 'LAPIS_ORE'
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&b[Diamante] &f'
+    ItemSlot: 30
+    ItemLore: 
+    - '@Custo e &6@CustoMoney'
+    ItemQuantia: 1
+    Id: '56'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+  Esmeralda:
+    CustoMoney: 1
+    Custo: 100
+    Posicao: 8
+    Evoluir: 'DIAMAND_ORE'
+    ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    Tag: '&a[Esmeralda] &f'
+    ItemSlot: 32
+    ItemLore: 
+    - ''
+    ItemQuantia: 1
+    Id: '129'
+    Categoria: minerador
+    Permissoes:
+    - 'recolherkit.mmembro'
+Plantacoes:
+  NETHER_WART:
+    Tamanho: 4
+    
+Mobs:
+  OCELOT:
+    Nome: 'Jaguatirica'
+  SPIDER:
+    Nome: 'Aranha'
+  PIG:
+    Nome: 'Porco'
+  BLAZE:
+    Nome: 'Blaze'
+  VILLAGER:
+    Nome: 'Villager'
+  SHEEP:
+    Nome: 'Ovelha'
+  GUARDIAN:
+    Nome: 'Guardião'
+  COW:
+    Nome: 'Vaca'
+  ZOMBIE:
+    Nome: 'Zumbi'
+  ENDERMITE:
+    Nome: 'Endermite'
+  WITCH:
+    Nome: 'Bruxa'
+  HORSE:
+    Nome: 'Cavalo'
+  MAGMA_CUBE:
+    Nome: 'Cubo de Magma'
+  CREEPER:
+    Nome: 'Creeper'
+  GHAST:
+    Nome: 'Ghast'
+  WITHER:
+    Nome: 'Wither'
