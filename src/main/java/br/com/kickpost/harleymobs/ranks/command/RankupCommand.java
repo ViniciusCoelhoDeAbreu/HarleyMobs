@@ -26,9 +26,8 @@ public class RankupCommand implements CommandExecutor {
 				player.playSound(player.getLocation(), Sound.ORB_PICKUP, 1.0f, 1.0f);
 			} else {
 				player.sendMessage(ChatColor.GOLD + "[Ranks] " + ChatColor.WHITE + "Você precisa de " + ChatColor.GOLD
-						+ rankupManager.getNextRank().getCategory().toString(rankupManager.getNextRank())
-						+ ChatColor.WHITE + " e" + ChatColor.GOLD + " "
-						+ ObjectUtils.getFormatter(rankupManager.getNextRank().getMoneyCost()) + " Money"
+						+ user.getRank().getCategory().toString(user.getRank()) + ChatColor.WHITE + " e"
+						+ ChatColor.GOLD + " " + ObjectUtils.getFormatter(user.getRank().getMoneyCost()) + " Money"
 						+ ChatColor.WHITE + " para evoluir.");
 				player.playSound(player.getLocation(), Sound.VILLAGER_NO, 1.0f, 1.0f);
 			}

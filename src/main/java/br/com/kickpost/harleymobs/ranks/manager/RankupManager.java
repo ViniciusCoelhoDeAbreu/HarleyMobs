@@ -15,8 +15,8 @@ public class RankupManager {
 	}
 
 	public boolean canRankup() {
-		return VaultHook.get(this.user.getPlayer()) >= this.getNextRank().getCost()
-				&& this.user.getValue() >= this.getNextRank().getCost();
+		return VaultHook.get(this.user.getPlayer()) >= user.getRank().getMoneyCost()
+				&& this.user.getValue() >= user.getRank().getCost();
 	}
 
 	public Rank getNextRank() {
@@ -24,10 +24,12 @@ public class RankupManager {
 	}
 
 	public void rankup(final Rank toRank) {
-		ObjectUtils.sendToOnlinePlayers(toRank.getActionBarMessage()
+		ObjectUtils.sendToOnlinePlayers(user.getRank().getActionBarMessage()
 				.replace("{jogador}", this.user.getPlayer().getName()).replace("{ranks}", toRank.getTag()));
-		ObjectUtils.sendTitle(toRank.getBroadcastMessage().replace("{ranks}", toRank.getTag()), this.user.getPlayer());
-		PermissionsExHook.setPermissions(this.user.getPlayer(), toRank.getPermissions());
+		ObjectUtils.sendTitle(user.getRank().getBroadcastMessage().replace("{ranks}", toRank.getTag()),
+				this.user.getPlayer());
+		PermissionsExHook.setPermissions(this.user.getPlayer(), user.getRank().getPermissions());
+
 		UserDao.put(this.user.getPlayer(), toRank, 0.0);
 		new RanksStorageManager(UserDao.get(this.user.getPlayer())).send(false);
 	}
