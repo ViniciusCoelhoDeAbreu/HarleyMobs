@@ -16,7 +16,7 @@ import org.bukkit.*;
 import org.bukkit.block.*;
 
 public class onRankActionListener implements Listener {
-	
+
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onPlantationBreak(final BlockBreakEvent e) {
@@ -24,9 +24,8 @@ public class onRankActionListener implements Listener {
 				&& e.getBlock().getData() == PlantationConfigurationLoader.getSize(e.getBlock().getType())) {
 			final Player player = e.getPlayer();
 			final User user = UserDao.get(player);
-			final Rank nextRank = new RankupManager(user).getNextRank();
-			if (nextRank.getCategory().getCategoryType().equals(CategoryType.FAZENDEIRO)
-					&& nextRank.getCategory().getItemName().equalsIgnoreCase(e.getBlock().getType().name())) {
+			if (user.getRank().getCategory().getCategoryType().equals(CategoryType.FAZENDEIRO)
+					&& user.getRank().getCategory().getItemName().equalsIgnoreCase(e.getBlock().getType().name())) {
 				user.setValue(user.getValue() + 1.0);
 			}
 		}
@@ -36,9 +35,8 @@ public class onRankActionListener implements Listener {
 	@EventHandler
 	public void onMobKill(final EntityCustomDeathListener e) {
 		final User user = UserDao.get(e.getPlayer());
-		final Rank nextRank = new RankupManager(user).getNextRank();
-		if (nextRank.getCategory().getCategoryType().equals(CategoryType.ASSASSINO)
-				&& nextRank.getCategory().getItemName().equalsIgnoreCase(e.getEntity().getType().name())) {
+		if (user.getRank().getCategory().getCategoryType().equals(CategoryType.ASSASSINO)
+				&& user.getRank().getCategory().getItemName().equalsIgnoreCase(e.getEntity().getType().name())) {
 			user.setValue(user.getValue() + 1.0);
 			ActionBar.send(e.getPlayer(),
 					ChatColor.GOLD + "[Mobs] " + ChatColor.WHITE + "Você matou " + ChatColor.GOLD
@@ -57,9 +55,8 @@ public class onRankActionListener implements Listener {
 		final Block block = e.getBlock();
 		final Player player = e.getPlayer();
 		final User user = UserDao.get(player);
-		final Rank nextRank = new RankupManager(user).getNextRank();
-		if (nextRank.getCategory().getCategoryType().equals(CategoryType.MINERADOR)
-				&& nextRank.getCategory().getItemName().equalsIgnoreCase(block.getType().name())) {
+		if (user.getRank().getCategory().getCategoryType().equals(CategoryType.MINERADOR)
+				&& user.getRank().getCategory().getItemName().equalsIgnoreCase(block.getType().name())) {
 			user.setValue(user.getValue() + 1.0);
 		}
 	}
