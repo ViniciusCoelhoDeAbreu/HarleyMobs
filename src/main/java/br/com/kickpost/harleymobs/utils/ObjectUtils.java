@@ -1,14 +1,25 @@
 package br.com.kickpost.harleymobs.utils;
 
-import java.text.*;
-import java.util.*;
-import java.util.stream.*;
-import org.bukkit.entity.*;
-import org.bukkit.inventory.*;
-import br.com.kickpost.harleymobs.nms.*;
-import org.bukkit.command.*;
-import org.bukkit.*;
-import br.com.kickpost.harleymobs.customspawner.loader.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringJoiner;
+import java.util.stream.Stream;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+import br.com.kickpost.harleymobs.customspawner.factory.CustomEntity;
+import br.com.kickpost.harleymobs.customspawner.factory.Drop;
+import br.com.kickpost.harleymobs.customspawner.loader.MobsConfigurationLoader;
+import br.com.kickpost.harleymobs.nms.ActionBar;
+import br.com.kickpost.harleymobs.nms.Title;
 
 public class ObjectUtils {
 	private static final NumberFormat formatter;
@@ -23,6 +34,27 @@ public class ObjectUtils {
 		Stream.of(typeName.split(" ")).forEach(
 				r -> newName.add(String.valueOf(r.substring(0, 1).toUpperCase()) + r.substring(1).toLowerCase()));
 		return newName.toString();
+	}
+
+	public static List<Drop> getDrops(Player player, EntityType entityType, int entityAmount) {
+		if (MobsConfigurationLoader.get(entityType) != null) {
+
+			CustomEntity customEntity = MobsConfigurationLoader.get(entityType);
+			List<Drop> drops = new ArrayList<Drop>();
+
+			int lootingMultiplier = (player.getItemInHand() != null && player.getItemInHand().hasItemMeta()
+					&& player.getItemInHand().getItemMeta().hasEnchant(Enchantment.LOOT_BONUS_MOBS))
+							? player.getItemInHand().getEnchantmentLevel(Enchantment.LOOT_BONUS_MOBS)
+							: 1;
+
+			customEntity.getDrops().stream().forEach(d -> {
+				Drop drop = d;
+				drop.setAmount(entityAmount * lootingMultiplier);
+				drops.add(drop);
+			});
+			return drops;
+		}
+		return null;
 	}
 
 	public static void removeItem(final Player player, final ItemStack item) {

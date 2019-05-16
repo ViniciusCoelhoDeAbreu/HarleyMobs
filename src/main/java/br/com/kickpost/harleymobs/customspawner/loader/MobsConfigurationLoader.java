@@ -1,13 +1,22 @@
 package br.com.kickpost.harleymobs.customspawner.loader;
 
-import org.bukkit.entity.*;
-import com.google.common.collect.*;
-import br.com.kickpost.harleymobs.*;
-import org.bukkit.configuration.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.EntityType;
+
+import com.google.common.collect.Maps;
+
+import br.com.kickpost.harleymobs.HarleyMobs;
+import br.com.kickpost.harleymobs.customspawner.factory.CustomEntity;
+import br.com.kickpost.harleymobs.customspawner.factory.Drop;
+import br.com.kickpost.harleymobs.utils.ItemManager;
 
 public class MobsConfigurationLoader {
-	protected static final HashMap<EntityType, String> ENTITY_TRANSLATED_NAME = Maps.newHashMap();
+	protected static final HashMap<EntityType, CustomEntity> ENTITY_TRANSLATED_NAME = Maps.newHashMap();
 
 	public MobsConfigurationLoader() {
 		this.setup();
@@ -18,21 +27,42 @@ public class MobsConfigurationLoader {
 		final Set<String> KEYS = SECTION.getKeys(false);
 		for (final String key : KEYS) {
 			MobsConfigurationLoader.ENTITY_TRANSLATED_NAME.put(EntityType.valueOf(key),
-					SECTION.getString(String.valueOf(key) + ".Nome"));
+					new CustomEntity(SECTION.getString(key + ".Nome"), getDrops(SECTION, key)));
 		}
 	}
 
-	public static final String getName(final EntityType entityType) {
+	private List<Drop> getDrops(ConfigurationSection section, String key) {
+		final ConfigurationSection SECTION = section.getConfigurationSection(key + ".Drops");
+		final Set<String> KEYS = SECTION.getKeys(false);
+
+		List<Drop> drops = new ArrayList<>();
+
+		for (String k : KEYS) {
+			String name = k;
+			ItemManager item = new ItemManager(SECTION.getString(k + ".Item"));
+
+			drops.add(new Drop(name, item));
+		}
+		return drops;
+	}
+
+	public static final CustomEntity get(EntityType entityType) {
 		return MobsConfigurationLoader.ENTITY_TRANSLATED_NAME.containsKey(entityType)
 				? MobsConfigurationLoader.ENTITY_TRANSLATED_NAME.get(entityType)
 				: null;
 	}
 
-	public static final EntityType get(final String argument) {
+	public static final String getName(EntityType entityType) {
+		return MobsConfigurationLoader.ENTITY_TRANSLATED_NAME.containsKey(entityType)
+				? MobsConfigurationLoader.ENTITY_TRANSLATED_NAME.get(entityType).getCustomName()
+				: null;
+	}
+
+	public static final EntityType get(String argument) {
 		if (MobsConfigurationLoader.ENTITY_TRANSLATED_NAME.entrySet().stream()
-				.anyMatch(c -> c.getValue().equalsIgnoreCase(argument))) {
+				.anyMatch(c -> c.getValue().getCustomName().equalsIgnoreCase(argument))) {
 			return MobsConfigurationLoader.ENTITY_TRANSLATED_NAME.entrySet().stream()
-					.filter(c -> c.getValue().equalsIgnoreCase(argument)).findFirst().get().getKey();
+					.filter(c -> c.getValue().getCustomName().equalsIgnoreCase(argument)).findFirst().get().getKey();
 		}
 		return null;
 	}

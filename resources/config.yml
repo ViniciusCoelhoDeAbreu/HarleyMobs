@@ -11,7 +11,7 @@ Ranks:
     Posicao: 1
     Evoluir: ''
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
     Tag: '&6[Terra] &f'
     ItemSlot: 12
     ItemLore: 
@@ -27,7 +27,7 @@ Ranks:
     Posicao: 2
     Evoluir: 'DIRT'
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
     Tag: '&7[Pedra] &f'
     ItemSlot: 13
     ItemLore: 
@@ -43,8 +43,8 @@ Ranks:
     Posicao: 3
     Evoluir: 'STONE'
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
-    Tag: '&8[Carvão] &f'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
+    Tag: '&8[Carvï¿½o] &f'
     ItemSlot: 14
     ItemLore: 
     - ''
@@ -59,7 +59,7 @@ Ranks:
     Posicao: 4
     Evoluir: 'COAL_ORE'
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
     Tag: '&f[Ferro] &f'
     ItemSlot: 21
     ItemLore: 
@@ -75,7 +75,7 @@ Ranks:
     Posicao: 5
     Evoluir: 'IRON_ORE'
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
     Tag: '&e[Ouro] &f'
     ItemSlot: 22
     ItemLore: 
@@ -91,8 +91,8 @@ Ranks:
     Posicao: 6
     Evoluir: 'GOLD_ORE'
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
-    Tag: '&9[Lápis] &f'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
+    Tag: '&9[Lï¿½pis] &f'
     ItemSlot: 23
     ItemLore: 
     - ''
@@ -107,7 +107,7 @@ Ranks:
     Posicao: 7
     Evoluir: 'LAPIS_ORE'
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
     Tag: '&b[Diamante] &f'
     ItemSlot: 30
     ItemLore: 
@@ -123,7 +123,7 @@ Ranks:
     Posicao: 8
     Evoluir: 'DIAMAND_ORE'
     ActionBarMessage: '&fJogador &6{jogador} &fevoluiu para {ranks}'
-    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocê foi evoluiu para {ranks}'
+    BroadcastMessage: '&6&lHARLEY RANKS <nl> &fVocï¿½ foi evoluiu para {ranks}'
     Tag: '&a[Esmeralda] &f'
     ItemSlot: 32
     ItemLore: 
@@ -140,33 +140,36 @@ Plantacoes:
 Mobs:
   OCELOT:
     Nome: 'Jaguatirica'
+    Drops:
+      caro:
+        Item: '1'
   SPIDER:
     Nome: 'Aranha'
+    Drops:
+      caro:
+        Item: '1'
   PIG:
     Nome: 'Porco'
+    Drops:
+      caro:
+        Item: '1'    
   BLAZE:
     Nome: 'Blaze'
+    Drops:
+      caro:
+        Item: '1'    
   VILLAGER:
     Nome: 'Villager'
+    Drops:
+      caro:
+        Item: '1'    
   SHEEP:
     Nome: 'Ovelha'
+    Drops:
+      caro:
+        Item: '1'    
   GUARDIAN:
-    Nome: 'Guardião'
-  COW:
-    Nome: 'Vaca'
-  ZOMBIE:
-    Nome: 'Zumbi'
-  ENDERMITE:
-    Nome: 'Endermite'
-  WITCH:
-    Nome: 'Bruxa'
-  HORSE:
-    Nome: 'Cavalo'
-  MAGMA_CUBE:
-    Nome: 'Cubo de Magma'
-  CREEPER:
-    Nome: 'Creeper'
-  GHAST:
-    Nome: 'Ghast'
-  WITHER:
-    Nome: 'Wither'
+    Nome: 'Guardiï¿½o'
+    Drops:
+      caro:
+        Item: '1'    
