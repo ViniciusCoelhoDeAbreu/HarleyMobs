@@ -1,10 +1,10 @@
 package br.com.kickpost.harleymobs.nms;
 
-import org.json.simple.*;
-import com.google.common.base.*;
-import org.bukkit.entity.*;
-import java.util.logging.*;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.json.simple.JSONObject;
+
+import com.google.common.base.Preconditions;
 
 public class ActionBar {
 	public static boolean DEBUG;
@@ -35,12 +35,6 @@ public class ActionBar {
 			connection.getClass().getMethod("sendPacket", ServerPackage.MINECRAFT.getClass("Packet")).invoke(connection,
 					packet);
 		} catch (Exception e) {
-			if (ActionBar.DEBUG) {
-				Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Failed to send action bar message.", e);
-			} else {
-				Logger.getLogger(this.getClass().getName()).log(Level.SEVERE,
-						"Failed to send action bar message to {0}. Is TextAPI updated?", player.getName());
-			}
 		}
 	}
 

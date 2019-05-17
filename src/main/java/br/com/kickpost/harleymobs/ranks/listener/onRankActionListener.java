@@ -40,7 +40,7 @@ public class onRankActionListener implements Listener {
 		final User user = UserDao.get(e.getPlayer());
 		if (user.getRank().getCategory().getCategoryType().equals(CategoryType.ASSASSINO)
 				&& user.getRank().getCategory().getItemName().equalsIgnoreCase(e.getEntity().getType().name())) {
-			user.setValue(user.getValue() + 1.0);
+			user.setValue(user.getValue() + e.getAmount());
 			ActionBar.send(e.getPlayer(),
 					ChatColor.GOLD + "[Mobs] " + ChatColor.WHITE + "Você matou " + ChatColor.GOLD
 							+ ObjectUtils.getFormatter(e.getAmount()) + " "
