@@ -34,14 +34,13 @@ public class onRankActionListener implements Listener {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onMobKill(final EntityCustomDeathListener e) {
 		final User user = UserDao.get(e.getPlayer());
 		if (user.getRank().getCategory().getCategoryType().equals(CategoryType.ASSASSINO)
 				&& user.getRank().getCategory().getItemName().equalsIgnoreCase(e.getEntity().getType().name())) {
 			user.setValue(user.getValue() + e.getAmount());
-			ActionBar.send(e.getPlayer(),
+			ActionBar.sendActionBarMessage(e.getPlayer(),
 					ChatColor.GOLD + "[Mobs] " + ChatColor.WHITE + "Você matou " + ChatColor.GOLD
 							+ ObjectUtils.getFormatter(e.getAmount()) + " "
 							+ MobsConfigurationLoader.getName(e.getEntity().getType()) + ChatColor.WHITE + " e recebeu "

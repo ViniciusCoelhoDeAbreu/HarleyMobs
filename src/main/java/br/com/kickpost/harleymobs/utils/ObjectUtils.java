@@ -65,9 +65,8 @@ public class ObjectUtils {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	public static void sendToOnlinePlayers(final String message) {
-		Bukkit.getOnlinePlayers().forEach(p -> ActionBar.send(p, message));
+		Bukkit.getOnlinePlayers().forEach(p -> ActionBar.sendActionBarMessage(p, message));
 	}
 
 	public static void sendTitle(final String message, final Player player) {
