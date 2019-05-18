@@ -5,6 +5,8 @@ import br.com.kickpost.harleymobs.*;
 import java.util.concurrent.*;
 import br.com.kickpost.harleymobs.ranks.type.*;
 import br.com.kickpost.harleymobs.ranks.factory.*;
+
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.*;
 import java.util.*;
 import java.util.stream.*;
@@ -25,20 +27,20 @@ public class RanksConfigurationLoader {
 
 		for (final String name : KEYS) {
 			final String key = name;
-			final double moneyCost = SECTION.getDouble(String.valueOf(key) + ".CustoMoney");
-			final double cost = SECTION.getDouble(String.valueOf(key) + ".Custo");
-			final String itemCategoryName = SECTION.getString(String.valueOf(key) + ".Evoluir");
-			final int position = SECTION.getInt(String.valueOf(key) + ".Posicao");
-			final String actionBarMessage = SECTION.getString(String.valueOf(key) + ".ActionBarMessage");
-			final String broadcastMessage = SECTION.getString(String.valueOf(key) + ".BroadcastMessage");
-			final String tag = SECTION.getString(String.valueOf(key) + ".Tag");
-			final int itemSlot = SECTION.getInt(String.valueOf(key) + ".ItemSlot");
-			final int ItemAmount = SECTION.getInt(String.valueOf(key) + ".ItemQuantia");
-			final List<String> itemLore = (List<String>) SECTION.getStringList(String.valueOf(key) + ".ItemLore");
-			final String id = SECTION.getString(String.valueOf(key) + ".Id");
-			final CategoryType category = CategoryType
-					.valueOf(SECTION.getString(String.valueOf(key) + ".Categoria").toUpperCase());
-			final List<String> permissions = (List<String>) SECTION.getStringList(String.valueOf(key) + ".Permissoes");
+			final double moneyCost = SECTION.getDouble(key + ".CustoMoney");
+			final double cost = SECTION.getDouble(key + ".Custo");
+			final String itemCategoryName = SECTION.getString(key + ".Evoluir");
+			final int position = SECTION.getInt(key + ".Posicao");
+			final String actionBarMessage = SECTION.getString(key + ".ActionBarMessage");
+			final String broadcastMessage = SECTION.getString(key + ".BroadcastMessage");
+			final String tag = SECTION.getString(key + ".Tag");
+			final int itemSlot = SECTION.getInt(key + ".ItemSlot");
+			final int ItemAmount = SECTION.getInt(key + ".ItemQuantia");
+			final List<String> itemLore = SECTION.getStringList(key + ".ItemLore");
+			final String id = SECTION.getString(key + ".Id");
+			final CategoryType category = CategoryType.valueOf(SECTION.getString(key + ".Categoria").toUpperCase());
+			final List<String> permissions = SECTION.getStringList(key + ".Permissoes");
+
 			if (CURRENT_INDEX_BY_CATEGORY.get(category).getCurrentIndex() == 9) {
 				CURRENT_INDEX_BY_CATEGORY.get(category).setPage(CURRENT_INDEX_BY_CATEGORY.get(category).getPage() + 1);
 				CURRENT_INDEX_BY_CATEGORY.get(category).setCurrentIndex(0);

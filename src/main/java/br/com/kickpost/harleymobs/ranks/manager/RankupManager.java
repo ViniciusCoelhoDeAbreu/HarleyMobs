@@ -28,7 +28,8 @@ public class RankupManager {
 				.replace("{jogador}", this.user.getPlayer().getName()).replace("{ranks}", toRank.getTag()));
 		ObjectUtils.sendTitle(user.getRank().getBroadcastMessage().replace("{ranks}", toRank.getTag()),
 				this.user.getPlayer());
-		PermissionsExHook.setPermissions(this.user.getPlayer(), user.getRank().getPermissions());
+		PermissionsExHook.setPermissions(this.user.getPlayer(), toRank.getPermissions());
+		VaultHook.remove(user.getPlayer(), user.getRank().getMoneyCost());
 
 		UserDao.put(this.user.getPlayer(), toRank, 0.0);
 		new RanksStorageManager(UserDao.get(this.user.getPlayer())).send(false);
