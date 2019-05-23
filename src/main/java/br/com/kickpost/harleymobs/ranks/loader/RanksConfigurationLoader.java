@@ -1,15 +1,22 @@
 package br.com.kickpost.harleymobs.ranks.loader;
 
-import com.google.common.collect.*;
-import br.com.kickpost.harleymobs.*;
-import java.util.concurrent.*;
-import br.com.kickpost.harleymobs.ranks.type.*;
-import br.com.kickpost.harleymobs.ranks.factory.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.*;
-import java.util.*;
-import java.util.stream.*;
+import org.bukkit.configuration.ConfigurationSection;
+
+import com.google.common.collect.Maps;
+
+import br.com.kickpost.harleymobs.HarleyMobs;
+import br.com.kickpost.harleymobs.ranks.factory.Category;
+import br.com.kickpost.harleymobs.ranks.factory.Item;
+import br.com.kickpost.harleymobs.ranks.factory.Page;
+import br.com.kickpost.harleymobs.ranks.factory.Rank;
+import br.com.kickpost.harleymobs.ranks.type.CategoryType;
 
 public class RanksConfigurationLoader {
 	protected static final HashMap<String, Rank> RANK_BY_NAME = Maps.newHashMap();

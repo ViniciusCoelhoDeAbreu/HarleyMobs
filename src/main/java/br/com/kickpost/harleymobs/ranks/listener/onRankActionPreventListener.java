@@ -8,12 +8,13 @@ import org.bukkit.*;
 import org.bukkit.event.*;
 
 public class onRankActionPreventListener implements Listener {
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onHit(final EntityDamageByEntityEvent e) {
 		if (e.getEntity() instanceof LivingEntity && e.getDamager() instanceof Player
 				&& MobsConfigurationLoader.getName(e.getEntity().getType()) != null) {
 			final Player player = (Player) e.getDamager();
-			if (!player.hasPermission("harleymobs.matar." + e.getEntity().getName().toLowerCase())) {
+			if (!player.hasPermission("harleymobs.matar." + e.getEntity().getType().getName().toLowerCase())) {
 				e.setCancelled(true);
 				ActionBar.sendActionBarMessage(player,
 						ChatColor.GOLD + "[Mobs] " + ChatColor.WHITE + "Você não tem permissão para matar este mob.");
