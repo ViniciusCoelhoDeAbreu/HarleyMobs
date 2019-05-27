@@ -66,6 +66,7 @@ public class SpawnerManager {
 				} else {
 					try {
 						final Hologram hologram = HologramsAPI.getHolograms((Plugin) HarleyMobs.getPlugin()).stream()
+								.filter(h -> h.getWorld().getName().equals(spawner.getLocation().getWorld().getName()))
 								.filter(h -> h.getLocation().distance(spawner.getLocation().getBlock().getLocation()
 										.clone().add(0.5, 3.0, 0.8)) < 1.0)
 								.findFirst().get();

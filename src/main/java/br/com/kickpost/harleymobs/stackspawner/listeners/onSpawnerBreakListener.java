@@ -1,5 +1,6 @@
 package br.com.kickpost.harleymobs.stackspawner.listeners;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -7,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import br.com.kickpost.harleymobs.customspawner.builder.SpawnerItemBuilder;
+import br.com.kickpost.harleymobs.stackspawner.dao.DelayDao;
 import br.com.kickpost.harleymobs.stackspawner.dao.SpawnerDao;
 import br.com.kickpost.harleymobs.stackspawner.factory.Spawner;
 import br.com.kickpost.harleymobs.stackspawner.manager.SpawnerManager;
@@ -18,13 +20,19 @@ public class onSpawnerBreakListener implements Listener {
 		if (e.getBlock() != null && SpawnerDao.contains(e.getBlock().getLocation())) {
 			Player player = e.getPlayer();
 			Spawner spawner = SpawnerDao.get(e.getBlock().getLocation());
-			
+
 			e.setCancelled(true);
-			
+
+			if (DelayDao.has(player)) {
+				player.sendMessage(
+						ChatColor.RED + "Aguarde " + DelayDao.get(player) + " segundos para quebrar outro spawner.");
+				return;
+			}
+
 			if (player.getItemInHand() != null && player.getItemInHand().getType() != null
 					&& player.getItemInHand().getType().equals((Object) Material.DIAMOND_PICKAXE)
 					&& player.getInventory().firstEmpty() != -1) {
-				
+
 				if (player.isSneaking() || spawner.getAmount() == 1) {
 					new SpawnerManager(spawner.getLocation()).removeHologram(spawner);
 					SpawnerDao.remove(spawner.getLocation());
@@ -37,6 +45,7 @@ public class onSpawnerBreakListener implements Listener {
 					new SpawnerStorageManager().update(spawner);
 					new SpawnerManager(spawner.getLocation()).putHologram(spawner, false);
 				}
+				DelayDao.put(player);
 			}
 		}
 	}

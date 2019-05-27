@@ -34,8 +34,7 @@ public class onMobDeathListener implements Listener {
 				final EntityManager newEntityManager = new EntityManager(newEntity);
 				dropItems(ObjectUtils.getDrops(player, entity.getType(), (int) CSpawner.getAmount()),
 						entity.getLocation());
-				new EntityCustomDeathListener(e.getEntity().getKiller(), entity,
-						entityManager.getAmount() - CSpawner.getAmount());
+				new EntityCustomDeathListener(e.getEntity().getKiller(), entity, CSpawner.getAmount());
 				newEntityManager.setAmount(entityManager.getAmount() - CSpawner.getAmount(), spawner.getLocation());
 			} else {
 				new EntityCustomDeathListener(e.getEntity().getKiller(), entity, entityManager.getAmount());
