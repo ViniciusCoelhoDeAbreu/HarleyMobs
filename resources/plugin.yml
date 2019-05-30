@@ -6,3 +6,4 @@ commands:
   ranks:
   rankup:
   mgive:
+    permission: mgive.use
