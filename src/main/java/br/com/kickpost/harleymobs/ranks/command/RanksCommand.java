@@ -13,7 +13,6 @@ public class RanksCommand implements CommandExecutor {
 				final RanksMainInventoryViewer ranksInventory = new RanksMainInventoryViewer(player);
 				ranksInventory.load();
 				ranksInventory.open();
-				return true;
 			} else if (args[0].equalsIgnoreCase("top")) {
 				RanksTopInventoryViewer ranksTopInventory = new RanksTopInventoryViewer(player);
 				ranksTopInventory.load();
