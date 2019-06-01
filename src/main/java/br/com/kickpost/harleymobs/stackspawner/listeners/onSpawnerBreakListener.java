@@ -49,4 +49,15 @@ public class onSpawnerBreakListener implements Listener {
 			}
 		}
 	}
+
+	public static void main(String[] args) {
+		int goal = 94;
+
+		int value = 0;
+
+		for (int i = goal; i > 0; i--) {
+			value += goal;
+		}
+		System.out.println(value);
+	}
 }

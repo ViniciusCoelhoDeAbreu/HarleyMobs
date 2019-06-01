@@ -6,6 +6,8 @@ import br.com.kickpost.harleymobs.customspawner.CustomSpawnerMain;
 import br.com.kickpost.harleymobs.mysql.MySQL;
 import br.com.kickpost.harleymobs.mysql.MySQLManager;
 import br.com.kickpost.harleymobs.ranks.RanksMain;
+import br.com.kickpost.harleymobs.ranks.mysql.RanksInfoStorageManager;
+import br.com.kickpost.harleymobs.ranks.runnable.RanksInfoUpdaterRunnable;
 import br.com.kickpost.harleymobs.stackmobs.StackMobsMain;
 import br.com.kickpost.harleymobs.stackspawner.StackSpawnerMain;
 
@@ -28,6 +30,8 @@ public class HarleyMobs extends JavaPlugin {
 		new CustomSpawnerMain();
 		new StackMobsMain();
 		HarleyMobs.mysql = new MySQLManager(this);
+		new RanksInfoStorageManager().insert();
+		new RanksInfoUpdaterRunnable();
 	}
 
 	private void registerListeners() {

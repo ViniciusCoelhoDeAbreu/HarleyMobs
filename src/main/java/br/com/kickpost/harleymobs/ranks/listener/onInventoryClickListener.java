@@ -15,7 +15,8 @@ public class onInventoryClickListener implements Listener {
 				|| e.getInventory() == null || e.getSlotType().equals((Object) InventoryType.SlotType.OUTSIDE)
 				|| e.getAction() == null || e.getInventory().getTitle() == null
 				|| (!e.getInventory().getTitle().startsWith(RanksInventoryViewer.getTitle())
-						&& !e.getInventory().getTitle().equals(RanksMainInventoryViewer.getTitle()))) {
+						&& !e.getInventory().getTitle().equals(RanksMainInventoryViewer.getTitle())
+						&& !e.getInventory().getTitle().equals(RanksTopInventoryViewer.getTitle()))) {
 			return;
 		}
 		e.setCancelled(true);

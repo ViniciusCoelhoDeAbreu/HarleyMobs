@@ -1,5 +1,6 @@
 package br.com.kickpost.harleymobs.ranks.loader;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -79,5 +80,9 @@ public class RanksConfigurationLoader {
 		return RanksConfigurationLoader.RANK_BY_NAME.values().stream()
 				.filter(r -> r.getCategory().getCategoryType().equals(categoryType)).filter(p -> p.getPage() == page)
 				.collect(Collectors.toSet());
+	}
+
+	public static final Collection<Rank> getRanks() {
+		return RANK_BY_NAME.values();
 	}
 }

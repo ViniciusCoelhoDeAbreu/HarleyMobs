@@ -1,4 +1,4 @@
-package br.com.kickpost.harleymobs.mysql;
+  package br.com.kickpost.harleymobs.mysql;
 
 import org.bukkit.plugin.java.*;
 import org.bukkit.*;
@@ -36,6 +36,10 @@ public class MySQLManager {
 					.execute();
 			this.sql.getPreparedStatement(
 					"CREATE TABLE IF NOT EXISTS spawners(id INT(10) NOT NULL AUTO_INCREMENT, location VARCHAR(255), type TEXT, amount DOUBLE, owner VARCHAR(255), PRIMARY KEY(id))")
+					.execute();
+			this.sql.getPreparedStatement("DROP TABLE IF EXISTS ranks_info").execute();
+			this.sql.getPreparedStatement(
+					"CREATE TABLE IF NOT EXISTS ranks_info(id INT(10) NOT NULL AUTO_INCREMENT, rank TEXT, value INT, PRIMARY KEY(id))")
 					.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
