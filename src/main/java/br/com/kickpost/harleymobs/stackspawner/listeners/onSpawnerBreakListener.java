@@ -30,7 +30,7 @@ public class onSpawnerBreakListener implements Listener {
 			}
 
 			if (player.getItemInHand() != null && player.getItemInHand().getType() != null
-					&& player.getItemInHand().getType().equals((Object) Material.DIAMOND_PICKAXE)
+					&& player.getItemInHand().getType().equals(Material.DIAMOND_PICKAXE)
 					&& player.getInventory().firstEmpty() != -1 && spawner.getOwner().equals(player.getUniqueId())) {
 
 				if (player.isSneaking() || spawner.getAmount() == 1) {

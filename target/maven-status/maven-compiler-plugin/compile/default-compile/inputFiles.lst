@@ -41,6 +41,7 @@ C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\listener\onRankActionListener.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\customspawner\factory\Spawner.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\mysql\RanksStorageManager.java
+C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\mysql\RanksInfoStorageManager.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\utils\ItemBuilder.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\stackspawner\manager\SpawnerManager.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\customspawner\command\SpawnerGiveCommand.java
@@ -51,8 +52,11 @@ C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\factory\Page.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\listener\onPlayerChatListener.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\nms\Title.java
+C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\factory\RankPlayer.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\stackspawner\listeners\onSpawnerPutListener.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\nms\ActionBar.java
+C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\runnable\RanksInfoUpdaterRunnable.java
+C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\inventory\RanksTopInventoryViewer.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\factory\AbstractMain.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\stackspawner\mysql\SpawnerStorageManager.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\factory\Rank.java

@@ -11,9 +11,11 @@ public class PermissionsExHook {
 		permissions.forEach(perm -> PermissionsEx.getUser(player).addPermission(perm));
 	}
 
+	@SuppressWarnings("deprecation")
 	public static String getPrefix(OfflinePlayer player) {
 		try {
-			return ChatColor.translateAlternateColorCodes('&', PermissionsEx.getUser(player.getName()).getOwnPrefix());
+			return ChatColor.translateAlternateColorCodes('&',
+					PermissionsEx.getUser(player.getName()).getGroups()[0].getPrefix());
 		} catch (NullPointerException e) {
 			return "";
 		}

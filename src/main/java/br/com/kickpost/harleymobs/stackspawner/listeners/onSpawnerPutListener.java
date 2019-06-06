@@ -15,18 +15,19 @@ import org.bukkit.event.*;
 public class onSpawnerPutListener implements Listener {
 	@EventHandler
 	public void onSpawnerPut(final BlockPlaceEvent e) {
-		if (new SpawnerItemManager(e.getItemInHand()).isSpawner()) {
-			 Player player = e.getPlayer();
-			 br.com.kickpost.harleymobs.customspawner.factory.Spawner spawner = new SpawnerItemManager(
-					e.getItemInHand()).getSpawner();
-			 SpawnerManager spawnerManager = new SpawnerManager(e.getBlock().getLocation());
-			 
+		if (new SpawnerItemManager(e.getItemInHand()).isSpawner()
+				&& e.getPlayer().getWorld().getName().equalsIgnoreCase("plotworld")) {
+			Player player = e.getPlayer();
+			br.com.kickpost.harleymobs.customspawner.factory.Spawner spawner = new SpawnerItemManager(e.getItemInHand())
+					.getSpawner();
+			SpawnerManager spawnerManager = new SpawnerManager(e.getBlock().getLocation());
+
 			if (spawnerManager.getMostProximitySpawner(spawner.getEntityType(), player) == null) {
 				final CreatureSpawner creatureSpawner = (CreatureSpawner) e.getBlock().getState();
 				creatureSpawner.setSpawnedType(spawner.getEntityType());
 				final Spawner CSpawner = new Spawner(spawner.getEntityType(), spawner.getAmount(), player.getUniqueId(),
-						creatureSpawner.getLocation());
-				SpawnerDao.put(e.getBlock().getLocation(), CSpawner);
+						creatureSpawner.getLocation().clone());
+				SpawnerDao.put(e.getBlock().getLocation().clone(), CSpawner);
 				player.sendMessage(ChatColor.GREEN + "Spawner colocado com sucesso!");
 				spawnerManager.putHologram(CSpawner, true);
 				new SpawnerStorageManager().send(CSpawner);
