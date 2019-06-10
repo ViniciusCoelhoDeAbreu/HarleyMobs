@@ -7,6 +7,7 @@ import br.com.kickpost.harleymobs.HarleyMobs;
 import br.com.kickpost.harleymobs.factory.Main;
 import br.com.kickpost.harleymobs.ranks.command.RanksCommand;
 import br.com.kickpost.harleymobs.ranks.command.RankupCommand;
+import br.com.kickpost.harleymobs.ranks.listener.onEntityPreventListener;
 import br.com.kickpost.harleymobs.ranks.listener.onInventoryClickListener;
 import br.com.kickpost.harleymobs.ranks.listener.onPlayerChatListener;
 import br.com.kickpost.harleymobs.ranks.listener.onPlayerJoinListener;
@@ -38,5 +39,6 @@ public class RanksMain extends Main {
 		pm.registerEvents(new onInventoryClickListener(), HarleyMobs.getPlugin());
 		pm.registerEvents(new onRankActionPreventListener(), HarleyMobs.getPlugin());
 		pm.registerEvents(new onPlayerChatListener(), HarleyMobs.getPlugin());
+		pm.registerEvents(new onEntityPreventListener(), HarleyMobs.getPlugin());
 	}
 }

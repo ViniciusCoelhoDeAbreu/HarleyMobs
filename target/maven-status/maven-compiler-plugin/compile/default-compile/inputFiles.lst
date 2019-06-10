@@ -4,6 +4,7 @@ C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\mysql\MySQL.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\utils\ItemManager.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\type\CategoryType.java
+C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\listener\onEntityPreventListener.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\mysql\MySQLManager.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\stackmobs\manager\EntityManager.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\listener\onInventoryClickListener.java
@@ -16,6 +17,7 @@ C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\customspawner\factory\Drop.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\inventory\RanksInventoryViewer.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\command\RankupCommand.java
+C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\command\subcommand\RankSetCommand.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\loader\RanksConfigurationLoader.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\ranks\RanksMain.java
 C:\Users\kickp\OneDrive\Documentos\Eclipse WorkSpace\HarleyMobs\src\main\java\br\com\kickpost\harleymobs\HarleyMobs.java
